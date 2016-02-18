@@ -5,16 +5,15 @@
 
 
 def createAnagramsArray():
-    w = 0
-    for words in fr:
-        w += 1
+
+    for words in contents:
         for letter in inputLetters:
             if letter not in words:
                 break
         else:
             WordsContainingLetters.append(words.strip())
     print(WordsContainingLetters)
-    print('Total Words in file: ', w)
+    print('Total Words in file: ', len(contents))
     print('WordsContainingLetters:', len(WordsContainingLetters))
 
 
@@ -29,7 +28,14 @@ def createResultsArray():
     print('Actual Anagrams: ', result)
 
 
-fr = open('words.txt', 'r')
+
+
+
+fr = open('uk.txt', 'r')
+content = fr.read()
+contents = content.split()
+
+
 inputLetters = input('Enter letters: ')
 WordsContainingLetters = []
 createAnagramsArray()
