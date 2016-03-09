@@ -13,23 +13,24 @@ def getPerms():
     for perm in permutations(inputLetters):
         perms.append( "".join(perm))
     setPerms = set(perms)
-    print(perms)
-    print('Total perms: ', len(perms))
+    #print(perms)
+    #print('Total perms: ', len(perms))
+    return setPerms
 
 getPerms()
 
 
-r = []
+
 
 def parse():
     fr = open('uk.txt', 'r')
     content = fr.read()
     contents = content.split()
     setContents = set(contents)
-    print(setContents)
-    print('Total contents: ', len(contents))
+    #print(setContents)
+    #print('Total contents: ', len(contents))
 
-
+    r = []
 
     for h in setContents:
         for y in setPerms():
@@ -38,7 +39,7 @@ def parse():
             else:
                 r. append(y)
                 print(y)
-
+    return r
 parse()
 
 print(r)
