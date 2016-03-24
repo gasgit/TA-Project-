@@ -28,7 +28,8 @@ def getPerms():
                 break
         else:
             results.append(word.strip())
-            print(results)
+    print(results)
+    return results
 
 getPerms()
 #print(perms)
@@ -45,9 +46,9 @@ def iterating():
             test = itertools.combinations(run , num )
             for word in test:
                 what.append(''.join(word))
-                
+
             setWhat=set(what)
-            print(setWhat)
+            print(sorted(setWhat))
             #print("run ",run,len(what))
             fr = open('words.txt', 'r')
             content = fr.read()
@@ -63,7 +64,10 @@ def iterating():
                     newArray.append(word.strip())
                     fw.write(word + '\n')
         newSet = set(newArray)
-    print(sorted(newSet))
+    #print('Sorted set: ', sorted(newSet))
+    #print(sorted(newArray))
+    print('Perms: ',len(perms))
+
 
 fw = open('itertools.txt','w' )
 
