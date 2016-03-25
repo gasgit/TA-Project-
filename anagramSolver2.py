@@ -12,6 +12,7 @@ def getPerms():
     for perm in permutations(inputLetters):
         perms.append( "".join(perm))
     setPerms = set(perms)
+    print(perms)
 
     fr = open('uk.txt', 'r')
     content = fr.read()

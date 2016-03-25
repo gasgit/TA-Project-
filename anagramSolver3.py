@@ -28,7 +28,7 @@ def getPerms():
                 break
         else:
             results.append(word.strip())
-    print(results)
+    print('Results: ', results)
     return results
 
 getPerms()
@@ -73,5 +73,6 @@ fw = open('itertools.txt','w' )
 
 iterating()
 
+print('Results: ', results)
 
 print(time.clock() - start_time, "seconds")
