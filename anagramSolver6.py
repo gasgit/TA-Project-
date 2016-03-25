@@ -8,11 +8,14 @@ start_time = time.clock()
 
 def getPerms():
     perms = []
-    for i in range(1, len(inputLetters)):
-        for c in combinations(sorted(inputLetters), i):
+    for i in range(0, len(inputLetters)):
+        for c in permutations(inputLetters, i):
            perms.append( "".join(c))
-           setWords = set(perms)
-    #print(setWords)
+    setWords = sorted( set(perms))
+    print(setWords)
+    # for i in perms:
+    #     if len(i) == len(inputLetters):
+    #         print(i)
     return setWords
 
             #possibility = set(c)
@@ -47,6 +50,7 @@ def check(setWords, setContents):
                 break
         else:
             results.append(word.strip())
+    print('inputLetters: ',inputLetters)
     print('Results: ', results)
     return results
 

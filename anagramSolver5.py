@@ -25,7 +25,7 @@ def get_perms(input_letters):
     perms = []
     for perm in permutations(input_letters):
         perms.append( "".join(perm))
-    print(perms)
+    #print(perms)
     return perms
 
 
