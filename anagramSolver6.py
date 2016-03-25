@@ -1,40 +1,18 @@
-import itertools
-from itertools import permutations, combinations
-import time
+import itertools, random, time
+from itertools import permutations
 
-
-
-start_time = time.clock()
+#start_time = time.clock()
 
 def getPerms():
     perms = []
-    for i in range(0, len(inputLetters)):
-        for c in permutations(inputLetters, i):
-           perms.append( "".join(c))
-    setWords = sorted( set(perms))
-    print(setWords)
-    # for i in perms:
-    #     if len(i) == len(inputLetters):
-    #         print(i)
+    for i in range(1, len(inputLetters)):
+        for p in permutations(inputLetters, i):
+           perms.append( "".join(p))
+    setWords = sorted(set(perms))
     return setWords
 
-            #possibility = set(c)
-            #print(possibility)
-
-    # for num in range(0,10):
-    #     for perm in permutations(inputLetters):
-    #
-    #         perms.append( "".join(perm))
-    #
-    # setPerms = set(perms)
-    # print(setPerms)
-    # return setPerms
-
-
-
-
 def getContents():
-    # fr = open('scrabbleLower.txt', 'r')
+    #fr = open('scrabbleLower.txt', 'r')
     fr = open('uk.txt', 'r')
     content = fr.read()
     contents = content.split()
@@ -54,50 +32,36 @@ def check(setWords, setContents):
     print('Results: ', results)
     return results
 
-def iterating(results, setContents):
-    what = []
-    for num in range(0,10):
-        for w in results:
-            test = itertools.combinations(w , num )
-            for word in test:
-                what.append(''.join(word))
-                if len(word) <= 9:
-                    if word in setContents:
-                        print(str(word) + '\n')
-    #print(what)
-    #for p in what:
 
+def vowels():
+    vowels = 'aaaaaaaaaaaaaaaeeeeeeeeeeeeeeeeeeeeeiiiiiiiiiiiiiooooooooooooouuuuu'
+    v = []
+    for i in vowels:
+        v.append(i)
+    random.shuffle(v)
+    l = random.sample(v,3)
+    print('Random vowels: ', l)
+    return l
 
-def iterating2(setContents, results):
-    what = []
+def cons():
+    consts = 'bbcccddddddffggghhjklllllmmmmnnnnnnnnppppqrrrrrrrrrssssssssstttttttttvwxyz'
+    c = []
+    for j in consts:
+        c.append(j)
+    random.shuffle(c)
+    k = random.sample(c,6)
+    print('Random cons: ', k)
+    return k
 
-    for num in range(0,10):
-        for w in results:
-            test = itertools.combinations(w,num)
-            for word in test:
-                what.append(''.join(word))
-    #for num in range(0,10):
-    for f in what:
-        if len(f) <= 9:
-            if f in setContents:
-                #print(str(f))
-                return f
-    #print(what)
-
-
-    #print(setPerms)
+def selection(l,k):
+    s = l+k
+    random.shuffle(s)
+    y = "".join(s)
+    print(y)
+    return y
 
 
 
+inputLetters = selection(vowels(),cons())
 
-#getPerms()
-#getContents()
-#check(getPerms(), getContents())
-inputLetters = input('Enter letters: ')
-
-#iterating(getContents(), check(getPerms(), getContents()))
-#iterating2(getContents(),check(getPerms(), getContents()))
-#checkPerms(getPerms())
-# getPerms()
-# getContents()
 check(getPerms(), getContents())
