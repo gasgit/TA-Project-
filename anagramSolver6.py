@@ -1,14 +1,14 @@
 import itertools, random, time
 from itertools import permutations
 
-#start_time = time.clock()
+start_time = time.clock()
 
 def getPerms():
     perms = []
     for i in range(1, len(inputLetters)):
         for p in permutations(inputLetters, i):
            perms.append( "".join(p))
-    setWords = sorted(set(perms))
+    setWords = set(perms)
     return setWords
 
 def getContents():
@@ -20,7 +20,7 @@ def getContents():
     print('Total contents: ', len(contents))
     return setContents
 
-def check(setWords, setContents):
+def check(setWords,setContents):
     results = []
     for word in setWords:
         for w in setContents:
@@ -29,9 +29,11 @@ def check(setWords, setContents):
         else:
             results.append(word.strip())
     print('inputLetters: ',inputLetters)
-    print('Results: ', results)
-    return results
+    #print('Results: ', results)
+    print('Results: ', sorted(results, key=len))
+    print('That took: ', time.clock() - start_time, "seconds")
 
+    return sorted(results)
 
 def vowels():
     vowels = 'aaaaaaaaaaaaaaaeeeeeeeeeeeeeeeeeeeeeiiiiiiiiiiiiiooooooooooooouuuuu'
@@ -39,7 +41,7 @@ def vowels():
     for i in vowels:
         v.append(i)
     random.shuffle(v)
-    l = random.sample(v,3)
+    l = random.sample(v,4)
     print('Random vowels: ', l)
     return l
 
@@ -49,7 +51,7 @@ def cons():
     for j in consts:
         c.append(j)
     random.shuffle(c)
-    k = random.sample(c,6)
+    k = random.sample(c,5)
     print('Random cons: ', k)
     return k
 
@@ -60,8 +62,5 @@ def selection(l,k):
     print(y)
     return y
 
-
-
 inputLetters = selection(vowels(),cons())
-
 check(getPerms(), getContents())
