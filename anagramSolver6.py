@@ -1,5 +1,5 @@
 import itertools
-from itertools import permutations
+from itertools import permutations, combinations
 import time
 
 
@@ -8,10 +8,27 @@ start_time = time.clock()
 
 def getPerms():
     perms = []
-    for perm in permutations(inputLetters):
-        perms.append( "".join(perm))
-    setPerms = set(perms)
-    return setPerms
+    for i in range(1, len(inputLetters)):
+        for c in combinations(sorted(inputLetters), i):
+           perms.append( "".join(c))
+           setWords = set(perms)
+    #print(setWords)
+    return setWords
+
+            #possibility = set(c)
+            #print(possibility)
+
+    # for num in range(0,10):
+    #     for perm in permutations(inputLetters):
+    #
+    #         perms.append( "".join(perm))
+    #
+    # setPerms = set(perms)
+    # print(setPerms)
+    # return setPerms
+
+
+
 
 def getContents():
     # fr = open('scrabbleLower.txt', 'r')
@@ -22,9 +39,9 @@ def getContents():
     print('Total contents: ', len(contents))
     return setContents
 
-def check(setPerms, setContents):
+def check(setWords, setContents):
     results = []
-    for word in setPerms:
+    for word in setWords:
         for w in setContents:
             if word not in setContents:
                 break
@@ -40,7 +57,7 @@ def iterating(results, setContents):
             test = itertools.combinations(w , num )
             for word in test:
                 what.append(''.join(word))
-                if len(word) <= 5:
+                if len(word) <= 9:
                     if word in setContents:
                         print(str(word) + '\n')
     #print(what)
@@ -59,7 +76,8 @@ def iterating2(setContents, results):
     for f in what:
         if len(f) <= 9:
             if f in setContents:
-                print(str(f))
+                #print(str(f))
+                return f
     #print(what)
 
 
@@ -73,5 +91,9 @@ def iterating2(setContents, results):
 #check(getPerms(), getContents())
 inputLetters = input('Enter letters: ')
 
-iterating(check(getPerms(), getContents()))
+#iterating(getContents(), check(getPerms(), getContents()))
 #iterating2(getContents(),check(getPerms(), getContents()))
+#checkPerms(getPerms())
+# getPerms()
+# getContents()
+check(getPerms(), getContents())
