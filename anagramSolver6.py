@@ -1,38 +1,66 @@
 import itertools, random, time
+
+
 from itertools import permutations
 
 start_time = time.clock()
+max_length = 9
 
-def getPerms():
+
+## get all permutation in inputletters
+def get_perms():
     perms = []
-    for i in range(1, len(inputLetters)):
+    for i in range(1, len(inputLetters) + 1):
         for p in permutations(inputLetters, i):
            perms.append( "".join(p))
-    setWords = set(perms)
-    return setWords
+    set_perms = set(perms)
+    return set_perms
 
-def getContents():
+# parse file and create a set of unique words
+def get_contents():
     #fr = open('scrabbleLower.txt', 'r')
+    con = []
     fr = open('uk.txt', 'r')
     content = fr.read()
     contents = content.split()
-    setContents = set(contents)
-    print('Total contents: ', len(contents))
-    return setContents
+    for w in contents:
+        con.append(w)
+    set_contents = set(con)
+    print('Total contents: ', len(set_contents))
+    return set_contents
 
-def check(setWords,setContents):
+# check set of unique words against inputletters and put into new set
+def set_content_input(set_contents):
+    result = []
+    for w in set_contents:
+        for letter in w:
+            if letter not in inputLetters:
+                break
+        else:
+            result.append(w.strip())
+    set_contents_C = set(result)
+    #print('SET CONTENTS: ', sorted(setContentsC, key=len))
+    return set_contents_C
+    #print('Actual Anagrams: ', sorted(result, key=len))
+
+# check set of perms against contents
+def check(set_perms, set_contents_C):
+    conundrums = []
     results = []
-    for word in setWords:
-        for w in setContents:
-            if word not in setContents:
+    for word in set_perms:
+        for w in set_contents_C:
+            if word not in set_contents_C:
                 break
         else:
             results.append(word.strip())
-    print('inputLetters: ',inputLetters)
-    #print('Results: ', results)
+            if(len(word) == max_length):
+                conundrums.append(word)
     print('Results: ', sorted(results, key=len))
-    print('That took: ', time.clock() - start_time, "seconds")
+    print('Total possible words: ', len(results))
 
+    print('inputLetters: ',inputLetters)
+    print('Conundrums: ', conundrums)
+    print('That took: ', time.clock() - start_time, "seconds")
     return sorted(results)
 
 def vowels():
@@ -59,8 +87,13 @@ def selection(l,k):
     s = l+k
     random.shuffle(s)
     y = "".join(s)
-    print(y)
+    print('All together now: ', y)
     return y
 
+
+#inputLetters = input('Enter letters: ')
+
 inputLetters = selection(vowels(),cons())
-check(getPerms(), getContents())
+
+
+check(get_perms(), set_content_input(get_contents()))
