@@ -46,6 +46,9 @@ def set_content_input(set_contents):
 # check set of perms against contents
 def check(set_perms, set_contents_C):
     conundrums = []
+    words8 = []
+    words7 = []
+    words6 = []
     results = []
     for word in set_perms:
         for w in set_contents_C:
@@ -55,11 +58,23 @@ def check(set_perms, set_contents_C):
             results.append(word.strip())
             if(len(word) == max_length):
                 conundrums.append(word)
+            elif(len(word) == 8):
+                words8.append(word)
+            elif(len(word) == 7):
+                words7.append(word)
+            elif(len(word) == 6):
+                words6.append(word)
+
+
     print('Results: ', sorted(results, key=len))
     print('Total possible words: ', len(results))
 
     print('inputLetters: ',inputLetters)
     print('Conundrums: ', conundrums)
+    print('Possible 8:', words8)
+    print('Possible 7:', words7)
+    print('Possible 6:', words6)
+
     print('That took: ', time.clock() - start_time, "seconds")
     return sorted(results)
 
