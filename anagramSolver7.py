@@ -32,11 +32,40 @@ def get_contents():
     return set_contents
 
 
+def get_nouns():
+    fr = open('nouns.txt', 'r')
+    #fr = open('wordsFromGit.txt', 'r')
+    nouns = []
+    content = fr.read()
+    contents = content.split()
+    for w in contents:
+        nouns.append(w)
+    set_nouns = set(nouns)
+    print('Total List Contents: ', len(nouns))
+    print('Total Set Contents: ', len(set_nouns))
+    return set_nouns
+
+def eliminate_nouns(set_contents, set_nouns):
+    contents2 = []
+    for c in set_contents:
+        for n in set_nouns:
+            if c not in set_nouns:
+                break;
+        else:
+
+            contents2.append(n)
+    set_contents2 = set(contents2)
+    return set_contents2
+
+
+
+
+
 
 # check set of unique words against inputletters and put into new set
-def set_content_input(set_contents):
+def set_content_input(set_contents2):
     result = []
-    for w in set_contents:
+    for w in set_contents2:
         for letter in w:
             if letter not in inputLetters:
                 break
@@ -133,10 +162,10 @@ def selection(l,k):
     return y
 
 
-inputLetters = input('Enter letters: ')
+#inputLetters = input('Enter letters: ')
 def input_letters():
     inputLetters = selection(vowels(),cons())
     return inputLetters
-
-#inputLetters = input_letters()
+eliminate_nouns(get_contents(), get_nouns())
+inputLetters = input_letters()
 check(get_perms(), set_content_input(get_contents()))
