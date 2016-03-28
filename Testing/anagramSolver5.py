@@ -51,7 +51,7 @@ def user_input(input_letters):
 
 input_letters = input('Enter letters: ')
 
-#user_input(input_letters)
+user_input(input_letters)
 
 #permutations(input_letters)
-get_perms(input_letters)
+#get_perms(input_letters)

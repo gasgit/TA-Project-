@@ -48,5 +48,6 @@ My script runs very quickly, and certainly within the 30 seconds allowed in the 
 
 ## References
 [1]: http://www.oxfordlearnersdictionaries.com/wordlist/english/oxford3000/
-[2]: http://tug.ctan.org/tex-archive/syst...dt/dict/uk.zip 
+[2]: http://tug.ctan.org/tex-archive/syst...dt/dict/uk.zip
 [3]: http://scrabblehelper.googlecode.com/svn-history/r20/trunk/ScrabbleHelper/src/dictionaries/sowpods.txt
+[4]: https://github.com/dwyl/english-words/blob/master/words.txt
