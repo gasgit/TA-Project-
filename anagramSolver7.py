@@ -17,9 +17,9 @@ def get_perms():
 
 # parse file and create a set of unique words
 def get_contents():
-    #fr = open('scrabbleLower.txt', 'r')
+    fr = open('scrabbleLower.txt', 'r')
     #fr = open('words.txt', 'r')
-    fr = open('uk.txt', 'r')
+    #fr = open('uk.txt', 'r')
     #fr = open('wordsFromGit.txt', 'r')
     con = []
     content = fr.read()
@@ -41,25 +41,13 @@ def get_nouns():
     for w in contents:
         nouns.append(w)
     set_nouns = set(nouns)
-    print('Total List Contents: ', len(nouns))
-    print('Total Set Contents: ', len(set_nouns))
+    print('Total List Nouns: ', len(nouns))
+    print('Total Set Nouns: ', len(set_nouns))
     return set_nouns
 
 def eliminate_nouns(set_contents, set_nouns):
-    contents2 = []
-    for c in set_contents:
-        for n in set_nouns:
-            if c not in set_nouns:
-                break;
-        else:
-
-            contents2.append(n)
-    set_contents2 = set(contents2)
+    set_contents2 = set_contents - set_nouns
     return set_contents2
-
-
-
-
 
 
 # check set of unique words against inputletters and put into new set
@@ -166,6 +154,7 @@ def selection(l,k):
 def input_letters():
     inputLetters = selection(vowels(),cons())
     return inputLetters
-eliminate_nouns(get_contents(), get_nouns())
+
 inputLetters = input_letters()
-check(get_perms(), set_content_input(get_contents()))
+
+check(get_perms(), set_content_input(eliminate_nouns(get_contents(), get_nouns())))
