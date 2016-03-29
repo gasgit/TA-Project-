@@ -15,7 +15,8 @@ Google gave me two relevant results on the first page, these are [Cool Project n
 2) word list was created from unix command:  cat /usr/share/dict/words > words.txt
 3) word list from  http://tug.ctan.org/tex-archive/syst...dt/dict/uk.zip i called uk.txt
 4) word list from  http://scrabblehelper.googlecode.com/svn-history/r20/trunk/ScrabbleHelper/src/dictionaries/sowpods.txt
-5) nouns list from http://www.desiquintans.com/downloads/nounlist/nounlist.txt
+5) nouns list from http://www.desiquintans.com/nounlist
+                   http://www.desiquintans.com/downloads/nounlist/nounlist.txt
 
 
 
