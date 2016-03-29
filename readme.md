@@ -19,11 +19,14 @@ For the purpose of this program is to find if not the conundrum the longest word
 I have used different collections of words found online and created from the system to test with.
 The script will use any wordlist.
 
-1) word list was created from unix command:  cat /usr/share/dict/words > words.txt
-2) word list from  http://tug.ctan.org/tex-archive/syst...dt/dict/uk.zip i called uk.txt
-3) word list from  http://scrabblehelper.googlecode.com/svn-history/r20/trunk/ScrabbleHelper/src/dictionaries/sowpods.txt
+1) word list was created from unix command:  cat /usr/share/dict/words > words.txt.
+
+2) word list from  http://tug.ctan.org/tex-archive/syst...dt/dict/uk.zip i called uk.txt.
+
+3) word list from  http://scrabblehelper.googlecode.com/svn-history/r20/trunk/ScrabbleHelper/src/dictionaries/sowpods.txt.
+
 4) nouns list from http://www.desiquintans.com/nounlist
-                   http://www.desiquintans.com/downloads/nounlist/nounlist.txt
+                   http://www.desiquintans.com/downloads/nounlist/nounlist.txt.
 
 
 
