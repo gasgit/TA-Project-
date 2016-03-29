@@ -19,8 +19,8 @@ def get_perms():
 def get_contents():
     #fr = open('scrabbleLower.txt', 'r')
     #fr = open('words.txt', 'r')
-    #fr = open('uk.txt', 'r')
-    fr = open('wordsFromGit.txt', 'r')
+    fr = open('uk.txt', 'r')
+    #fr = open('wordsFromGit.txt', 'r')
     con = []
     content = fr.read()
     contents = content.split()
