@@ -31,7 +31,7 @@ def get_contents():
     print('Total Set Contents: ', len(set_contents))
     return set_contents
 
-
+# parse file of nouns
 def get_nouns():
     fr = open('nouns.txt', 'r')
     #fr = open('wordsFromGit.txt', 'r')
@@ -45,12 +45,13 @@ def get_nouns():
     print('Total Set Nouns: ', len(set_nouns))
     return set_nouns
 
+# typical set comparison
 def eliminate_nouns(set_contents, set_nouns):
     set_contents2 = set_contents - set_nouns
     return set_contents2
 
 
-# check set of unique words against inputletters and put into new set
+# check set of unique words against inputletters and put into new set set_contents_C
 def set_content_input(set_contents2):
     result = []
     for w in set_contents2:
@@ -63,6 +64,7 @@ def set_content_input(set_contents2):
     return set_contents_C
 
 # check set of perms against contents
+# i loop this on to place results in place
 def check(set_perms, set_contents_C):
     conundrums = []
     words8 = []
@@ -149,12 +151,15 @@ def selection(l,k):
     print('All together now: ', y)
     return y
 
-
+# for testing i like to use combinations i know manually
 #inputLetters = input('Enter letters: ')
+
+# create kinda random selection
 def input_letters():
     inputLetters = selection(vowels(),cons())
     return inputLetters
 
 inputLetters = input_letters()
 
+# calling costs so here we go in one
 check(get_perms(), set_content_input(eliminate_nouns(get_contents(), get_nouns())))
