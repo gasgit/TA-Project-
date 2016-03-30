@@ -13,15 +13,15 @@ Google gave me two relevant results on the first page, these are [Cool Project n
 ## Words list
 1) word list was created in class as wordlen9.txt
 2) word list was created from unix command:  cat /usr/share/dict/words > words.txt
-3) word list from  http://tug.ctan.org/tex-archive/syst...dt/dict/uk.zip i called uk.txt
-4) word list from  http://scrabblehelper.googlecode.com/svn-history/r20/trunk/ScrabbleHelper/src/dictionaries/sowpods.txt
+3) word list from  http://tug.ctan.org/tex-archive/syst...dt/dict/uk.zip, renamed as uk.txt.
+4) word list from  http://scrabblehelper.googlecode.com/svn-history/r20/trunk/ScrabbleHelper/src/dictionaries/sowpods.txt, renamed as scrabbleLower.txt.
 5) nouns list from http://www.desiquintans.com/nounlist
                    http://www.desiquintans.com/downloads/nounlist/nounlist.txt
 
 
 
 ## Python script
-My script is in the files [anagramSolver.py](anagramSolver.py) in this repository and it works as follows.
+My script is in the files [anagramSolver7.py](anagramSolver.py) in this repository and it works as follows.
 The most important section is:
 
 ```python

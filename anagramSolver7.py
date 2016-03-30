@@ -2,8 +2,8 @@ import itertools, random, time
 from itertools import permutations
 
 
-start_time = time.clock()
 max_length = 9
+
 
 # get all permutation in inputletters
 def get_perms():
@@ -15,32 +15,37 @@ def get_perms():
     return set_perms
 
 
+start_time = time.clock()
+
 # parse file and create a set of unique words
 def get_contents():
-    #fr = open('scrabbleLower.txt', 'r')
-    #fr = open('words.txt', 'r')
-    fr = open('uk.txt', 'r')
-    #fr = open('wordsFromGit.txt', 'r')
-    con = []
-    content = fr.read()
-    contents = content.split()
-    for w in contents:
-        con.append(w)
-    set_contents = set(con)
+    #with open('scrabbleLower.txt', 'r') as f:
+    #with open('words.txt', 'r') as f:
+    #with open('uk.txt', 'r') as f:
+    with open('wordsFromGit.txt', 'r') as f:
+        con = []
+        content = f.read().lower()
+        contents = content.split()
+        for w in contents:
+            con.append(w)
+
+        set_contents = set(con)
+
     print('Total List Contents: ', len(con))
     print('Total Set Contents: ', len(set_contents))
+    print('Parse file and create set_contents time: ', time.clock() - start_time, "seconds")
     return set_contents
+
 
 # parse file of nouns
 def get_nouns():
-    fr = open('nouns.txt', 'r')
-    #fr = open('wordsFromGit.txt', 'r')
-    nouns = []
-    content = fr.read()
-    contents = content.split()
-    for w in contents:
-        nouns.append(w)
-    set_nouns = set(nouns)
+    with open('nouns.txt', 'r') as f:
+        nouns = []
+        content = f.read()
+        contents = content.split()
+        for w in contents:
+            nouns.append(w)
+        set_nouns = set(nouns)
     print('Total List Nouns: ', len(nouns))
     print('Total Set Nouns: ', len(set_nouns))
     return set_nouns
@@ -101,7 +106,8 @@ def check(set_perms, set_contents_C):
             # else:
             #     print("Not Possible")
 
-    print('That took: ', time.clock() - start_time, "seconds")
+    print('Before printing time: ', time.clock() - start_time, "seconds")
+    print_before = time.clock() - start_time
 
     print('Results: ', sorted(results, key=len))
     print('----------------------------')
@@ -119,8 +125,8 @@ def check(set_perms, set_contents_C):
     print('----------------------------')
     print('Possible 5:', words5)
     print('----------------------------')
-
-    print('That took: ', time.clock() - start_time, "seconds")
+    print('Before printing time: ', print_before, "seconds")
+    print('That time: ', time.clock() - start_time, "seconds")
     return results
 
 
@@ -130,7 +136,9 @@ def vowels():
     for i in vowels:
         v.append(i)
     random.shuffle(v)
-    l = random.sample(v,3)
+    #l = random.sample(v,3)
+    #l = random.sample(v,4)
+    l = random.sample(v,5)
     print('Random vowels: ', l)
     return l
 
@@ -140,7 +148,10 @@ def cons():
     for j in consts:
         c.append(j)
     random.shuffle(c)
-    k = random.sample(c,6)
+    #k = random.sample(c,6)
+    #k = random.sample(c,5)
+    k = random.sample(c,4)
+
     print('Random cons: ', k)
     return k
 
@@ -151,6 +162,48 @@ def selection(l,k):
     print('All together now: ', y)
     return y
 
+
+
+def letters_selection():
+    vowels = 'aaaaaaaaaaaaaaaeeeeeeeeeeeeeeeeeeeeeiiiiiiiiiiiiiooooooooooooouuuuu'
+    v = []
+    consts = 'bbcccddddddffggghhjklllllmmmmnnnnnnnnppppqrrrrrrrrrssssssssstttttttttvwxyz'
+    c = []
+
+    for i in vowels:
+        v.append(i)
+    random.shuffle(v)
+
+
+    for j in consts:
+        c.append(j)
+    random.shuffle(c)
+
+    # l = random.sample(v,3)
+    # k = random.sample(c,6)
+
+    l = random.sample(v,4)
+    k = random.sample(c,5)
+    #
+    #
+    # l = random.sample(v,5)
+    # k = random.sample(c,4)
+    print('Random vowels: ', l)
+    print('Random cons: ', k)
+
+
+    s = l+k
+    random.shuffle(s)
+    y = "".join(s)
+    print('All together now: ', y)
+    return y
+
+
+
+
+
+
+
 # for testing i like to use combinations i know manually
 #inputLetters = input('Enter letters: ')
 
@@ -159,7 +212,9 @@ def input_letters():
     inputLetters = selection(vowels(),cons())
     return inputLetters
 
-inputLetters = input_letters()
+#inputLetters = input_letters()
+inputLetters = letters_selection()
+#letters()
 
 # calling costs so here we go in one
 check(get_perms(), set_content_input(eliminate_nouns(get_contents(), get_nouns())))
