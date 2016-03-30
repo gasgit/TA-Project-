@@ -24,11 +24,13 @@ def get_contents():
     #with open('words.txt', 'r') as f:
     #with open('uk.txt', 'r') as f:
     #with open('wordsFromGit.txt', 'r') as f:
+        con = []
         content = f.read().lower()
         contents = content.split()
-        set_contents = set(contents)
-
-    print('Total List Contents: ', len(contents))
+        for w in contents:
+            con.append(w)
+        set_contents = set(con)
+        print('Total List Contents: ', len(con))
     print('Total Set Contents: ', len(set_contents))
     print('Parse file and create set_contents time: ', time.clock() - start_time, "seconds")
     return set_contents
@@ -42,7 +44,7 @@ def get_nouns():
         contents = content.split()
         for w in contents:
             nouns.append(w)
-        set_nouns = set(nouns)
+        set_nouns = set(contents)
     print('Total List Nouns: ', len(nouns))
     print('Total Set Nouns: ', len(set_nouns))
     return set_nouns
@@ -162,10 +164,10 @@ def letters_selection():
 
 
 # for testing i like to use combinations i know manually
-inputLetters = input('Enter letters: ')
+#inputLetters = input('Enter letters: ')
 
 
-#inputLetters = letters_selection()
+inputLetters = letters_selection()
 
 # calling costs so here we go in one
 check(get_perms(), set_content_input(eliminate_nouns(get_contents(), get_nouns())))
