@@ -27,10 +27,13 @@ def get_contents():
         con = []
         content = f.read().lower()
         contents = content.split()
+        print('Parse file and split to list: ', time.clock() - start_time, "seconds")
+
         for w in contents:
-            con.append(w)
+            if len(w) <= max_length:
+                con.append(w)
         set_contents = set(con)
-        print('Total List Contents: ', len(con))
+    print('Total List Contents: ', len(contents))
     print('Total Set Contents: ', len(set_contents))
     print('Parse file and create set_contents time: ', time.clock() - start_time, "seconds")
     return set_contents
@@ -43,9 +46,10 @@ def get_nouns():
         content = f.read()
         contents = content.split()
         for w in contents:
-            nouns.append(w)
+            if len(w) <= max_length:
+                nouns.append(w)
         set_nouns = set(contents)
-    print('Total List Nouns: ', len(nouns))
+    print('Total List Contents Nouns: ', len(contents))
     print('Total Set Nouns: ', len(set_nouns))
     return set_nouns
 
@@ -146,12 +150,15 @@ def letters_selection():
     # l = random.sample(v,3)
     # k = random.sample(c,6)
 
+
     l = random.sample(v,4)
     k = random.sample(c,5)
 
-
+    #
     # l = random.sample(v,5)
     # k = random.sample(c,4)
+
+
     print('Random vowels: ', l)
     print('Random cons: ', k)
 

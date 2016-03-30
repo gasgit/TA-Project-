@@ -43,11 +43,35 @@ I have used lists, sets, in/not in and for else  statements to complete this tas
 As a pyhton script i have opted to use one of the best built in tools **itertools**
 
 
+This is an example showing how the list and set contents remain the same. This will only occur as long as the input
+letters are unique. In this example 'abc'
+
+```
+Enter letters: abc
+Perms: ['a', 'b', 'c', 'ab', 'ac', 'ba', 'bc', 'ca', 'cb', 'abc', 'acb', 'bac', 'bca', 'cab', 'cba']
+Len perms:  15
+Set:  {'ca', 'bc', 'c', 'ba', 'b', 'cb', 'acb', 'cba', 'abc', 'bca', 'a', 'bac', 'ac', 'cab', 'ab'}
+Len set:  15
+
+```
+
+Once the input has repeated input letters the set removes duplicates close to half the size of the list.
 
 
+```
+
+Enter letters: aba
+Perms: ['a', 'b', 'a', 'ab', 'aa', 'ba', 'ba', 'aa', 'ab', 'aba', 'aab', 'baa', 'baa', 'aab', 'aba']
+Len perms:  15
+Set:  {'ba', 'ab', 'b', 'aba', 'aab', 'aa', 'baa', 'a'}
+Len set:  8
+
+
+```
 
 
 ### Preprocessing
+
 I have not opted for preprocessing steps or techniques such as Pickle in this script.
 
 
@@ -57,33 +81,33 @@ I have not opted for preprocessing steps or techniques such as Pickle in this sc
 
 
 ```
-Random vowels:  ['o', 'i', 'e', 'a']
-Random cons:  ['r', 'g', 'c', 's', 'd']
-All together now:  oecidgrsa
-Total List Contents:  354984
-Total Set Contents:  354983
-Parse file and create set_contents time:  0.498834 seconds
-Total List Nouns:  2334
+Random vowels:  ['i', 'a', 'i', 'e']
+Random cons:  ['s', 'l', 's', 'd', 't']
+All together now:  saitseldi
+Parse file and split to list:  0.361319 seconds
+Total List Contents:  267751
+Total Set Contents:  155302
+Parse file and create set_contents time:  0.41156699999999996 seconds
+Total List Contents Nouns:  2334
 Total Set Nouns:  2326
-Before printing time:  1.036014 seconds
+Before printing time:  0.567304 seconds
+
+```
+
 
 
 ```
-
-
-
-```
 ----------------------------
-InputLetters: oecidgrsa
+InputLetters: saitseldi
 ----------------------------
-Total possible words: 823
+Total possible words: 407
 ----------------------------
-Conundrums:  []
+Conundrums:  ['idealists']
 ----------------------------
-Possible 8: ['radicose', 'disgrace', 'croisade', 'idocrase', 'cordages']
+Possible 8: ['dialists', 'idealist']
 ----------------------------
-Possible 7: ['caserio', 'cadgers', 'cordies', 'scrogie', 'codgers', 'orgiacs', 'scoriae', 'agrised', 'socager', 'scaroid', 'codeias', 'dogear
-s', 'cargoes', 'discage', 'soredia', 'cordage', 'croisad', 'sarcode', 'sarcoid', 'ardoise', 'radices', 'coraise', 'ergodic', 'corsage']
+Possible 7: ['deasils', 'dialist', 'sialids', 'details', 'desalts', 'delists', 'distils', 'laities', 'dilates', 'saidest', 'liaises', 'dissea
+t', 'silesia', 'dailies', 'daisies', 'salties', 'aidless', 'sedilia', 'liaised']
 ----------------------------
 
 ```
