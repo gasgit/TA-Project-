@@ -23,7 +23,7 @@ The script will use any wordlist
 
 2) word list from  http://tug.ctan.org/tex-archive/syst...dt/dict/uk.zip i called uk.txt.
 
-3) word list from  http://scrabblehelper.googlecode.com/svn-history/r20/trunk/ScrabbleHelper/src/dictionaries/sowpods.txt.
+3) word list from  http://scrabblehelper.googlecode.com/svn-history/r20/trunk/ScrabbleHelper/src/dictionaries/sowpods.txt, renamed scrabble.txt
 
 4) word list from  https://github.com/dwyl/english-words/blob/master/words.txt, renamed wordsFromGit.txt
 

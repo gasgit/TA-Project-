@@ -24,11 +24,15 @@ def get_contents():
     #with open('words.txt', 'r') as f:
     #with open('uk.txt', 'r') as f:
     #with open('wordsFromGit.txt', 'r') as f:
+        con = []
         content = f.read().lower()
         contents = content.split()
-        set_contents = set(contents)
+        for w in contents:
+            con.append(w)
 
-    print('Total List Contents: ', len(contents))
+        set_contents = set(con)
+
+    print('Total List Contents: ', len(con))
     print('Total Set Contents: ', len(set_contents))
     print('Parse file and create set_contents time: ', time.clock() - start_time, "seconds")
     return set_contents
@@ -127,6 +131,40 @@ def check(set_perms, set_contents_C):
     return results
 
 
+# def vowels():
+#     vowels = 'aaaaaaaaaaaaaaaeeeeeeeeeeeeeeeeeeeeeiiiiiiiiiiiiiooooooooooooouuuuu'
+#     v = []
+#     for i in vowels:
+#         v.append(i)
+#     random.shuffle(v)
+#     #l = random.sample(v,3)
+#     #l = random.sample(v,4)
+#     l = random.sample(v,5)
+#     print('Random vowels: ', l)
+#     return l
+#
+# def cons():
+#     consts = 'bbcccddddddffggghhjklllllmmmmnnnnnnnnppppqrrrrrrrrrssssssssstttttttttvwxyz'
+#     c = []
+#     for j in consts:
+#         c.append(j)
+#     random.shuffle(c)
+#     #k = random.sample(c,6)
+#     #k = random.sample(c,5)
+#     k = random.sample(c,4)
+#
+#     print('Random cons: ', k)
+#     return k
+#
+# def selection(l,k):
+#     s = l+k
+#     random.shuffle(s)
+#     y = "".join(s)
+#     print('All together now: ', y)
+#     return y
+
+
+
 def letters_selection():
     vowels = 'aaaaaaaaaaaaaaaeeeeeeeeeeeeeeeeeeeeeiiiiiiiiiiiiiooooooooooooouuuuu'
     v = []
@@ -137,6 +175,7 @@ def letters_selection():
         v.append(i)
     random.shuffle(v)
 
+
     for j in consts:
         c.append(j)
     random.shuffle(c)
@@ -146,8 +185,8 @@ def letters_selection():
 
     l = random.sample(v,4)
     k = random.sample(c,5)
-
-
+    #
+    #
     # l = random.sample(v,5)
     # k = random.sample(c,4)
     print('Random vowels: ', l)
@@ -161,11 +200,22 @@ def letters_selection():
     return y
 
 
+
+
+
+
+
 # for testing i like to use combinations i know manually
 inputLetters = input('Enter letters: ')
 
+# create kinda random selection
+def input_letters():
+    inputLetters = selection(vowels(),cons())
+    return inputLetters
 
+#inputLetters = input_letters()
 #inputLetters = letters_selection()
+#letters()
 
 # calling costs so here we go in one
 check(get_perms(), set_content_input(eliminate_nouns(get_contents(), get_nouns())))
