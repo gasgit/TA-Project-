@@ -19,11 +19,11 @@ start_time = time.clock()
 
 # parse file and create a set of unique words
 def get_contents():
-    with open('scrabble.txt', 'r') as f:
+    #with open('scrabble.txt', 'r') as f:
     #with open('scrabbleLower.txt', 'r') as f:
     #with open('words.txt', 'r') as f:
     #with open('uk.txt', 'r') as f:
-    #with open('wordsFromGit.txt', 'r') as f:
+    with open('wordsFromGit.txt', 'r') as f:
         con = []
         content = f.read().lower()
         contents = content.split()
@@ -88,6 +88,7 @@ def check(set_perms, set_contents_C):
             results.append(word.strip())
             if(len(word) == max_length):
                 conundrums.append(word)
+                print('Conundrum found time: ' ,  time.clock() - start_time, "seconds")
             elif(len(word) == 8):
                 words8.append(word)
             elif(len(word) == 7):

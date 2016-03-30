@@ -40,7 +40,8 @@ The purpose of this script is to find if not the conundrum the longest words pos
 The script will find all conundrums if any and all other words of decreasing length possible.
 
 I have used lists, sets, in/not in and for else  statements to complete this task.
-As a pyhton script i have opted to use one of the best built in tools **itertools**
+As its a pyhton script i have opted to use one of the best built in tools **itertools**.
+Permutations is only a single part of itertools and what i use here.
 
 
 This is an example showing how the list and set contents remain the same. This will only occur as long as the input
@@ -78,16 +79,17 @@ I have not opted for preprocessing steps or techniques such as Pickle in this sc
 ## Efficiency
 
 ```
-Random vowels:  ['i', 'a', 'i', 'e']
-Random cons:  ['s', 'l', 's', 'd', 't']
-All together now:  saitseldi
-Parse file and split to list:  0.361319 seconds
-Total List Contents:  267751
-Total Set Contents:  155302
-Parse file and create set_contents time:  0.41156699999999996 seconds
+Random vowels:  ['o', 'e', 'i', 'i']
+Random cons:  ['h', 'l', 'c', 't', 'd']
+All together now:  etcdoihli
+Parse file and split to list:  0.376579 seconds
+Total List Contents:  354984
+Total Set Contents:  193665
+Parse file and create set_contents time:  0.442996 seconds
 Total List Contents Nouns:  2334
 Total Set Nouns:  2326
-Before printing time:  0.567304 seconds
+Conundrum found time:  0.59912 seconds
+Before printing time:  0.6721670000000001 seconds
 
 ```
 
@@ -95,16 +97,20 @@ Before printing time:  0.567304 seconds
 
 ```
 ----------------------------
-InputLetters: saitseldi
+InputLetters: etcdoihli
 ----------------------------
-Total possible words: 407
+Total possible words: 383
 ----------------------------
-Conundrums:  ['idealists']
+Conundrums:  ['lecithoid']
 ----------------------------
-Possible 8: ['dialists', 'idealist']
+Possible 8: ['chiolite', 'helicoid', 'idiolect', 'eolithic']
 ----------------------------
-Possible 7: ['deasils', 'dialist', 'sialids', 'details', 'desalts', 'delists', 'distils', 'laities', 'dilates', 'saidest', 'liaises', 'dissea
-t', 'silesia', 'dailies', 'daisies', 'salties', 'aidless', 'sedilia', 'liaised']
+Possible 7: ['thiolic', 'ceilidh', 'clothed', 'delicto', 'eidolic', 'delicti', 'cheloid', 'lichted', 'lithoed', 'helcoid', 'dithiol', 'lithoi
+d', 'thecoid', 'helioid']
+----------------------------
+Possible 6: ['delict', 'iolite', 'citole', 'coedit', 'clothe', 'hilted', 'docile', 'itched', 'deltic', 'idolet', 'choile', 'iodite', 'iditol'
+, 'tholed', 'teioid', 'childe', 'toiled', 'octile', 'chilte', 'lithic', 'dolite', 'citied', 'dietic', 'diotic', 'coiled', 'litchi', 'elicit',
+ 'lecthi', 'tichel', 'chield', 'cleoid', 'clithe', 'eolith']
 ----------------------------
 
 ```
