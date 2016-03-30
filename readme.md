@@ -77,9 +77,6 @@ I have not opted for preprocessing steps or techniques such as Pickle in this sc
 
 ## Efficiency
 
-## Results
-
-
 ```
 Random vowels:  ['i', 'a', 'i', 'e']
 Random cons:  ['s', 'l', 's', 'd', 't']
@@ -94,7 +91,7 @@ Before printing time:  0.567304 seconds
 
 ```
 
-
+## Results
 
 ```
 ----------------------------
