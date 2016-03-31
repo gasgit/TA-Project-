@@ -6,18 +6,14 @@
 ###Countdown Letters Game
 Contestants are required to randomly select nine letters from two piles, vowels and consonants.
 There has to be at least 3 vowels and at least 4 consonants in the complete selection.
-Valid selections are (3 vowels and 6 cons, 4 vowels and 5 cons, 5 vowels and 4 cons)
+Valid selections are (3 vowels and 6 coconsonants, 4 vowels and 5 consonants, 5 vowels and 4 consonants)
 In the game the players have 30 seconds to find the longest word possible using the selected letters.
 Proper nouns are not permitted.
-Points are .....
-
 
 
 ### Words list
 I have used different collections of words found online and created from the system to test with.
 The script will use any wordlist
-
-
 
 1) word list was created from unix command:  cat /usr/share/dict/words > words.txt, 99171 words.
 
@@ -25,19 +21,16 @@ The script will use any wordlist
 
 3) word list from  http://tug.ctan.org/tex-archive/syst...dt/dict/uk.zip i called uk.txt, 153222 words.
 
-
 4) word list from  https://github.com/dwyl/english-words/blob/master/words.txt, renamed wordsFromGit.txt, 354985 words.
-
 
 5) nouns list from http://www.desiquintans.com/nounlist
                    http://www.desiquintans.com/downloads/nounlist/nounlist.txt, renamed nouns.txt, 2327 words.
                    Used in a previous version
 
 
-
 ### Python script
 My script is (anagramSolver8.py) in this repository and it works as follows.
-The purpose of this script is to find if not the conundrum the longest words possible.
+The purpose of this script is to find a conundrum the longest words possible.
 
 The script will find all conundrums if any and all other words of decreasing length possible.
 
@@ -62,7 +55,7 @@ Len set:  15
 
 ```
 
-Once the input has repeated input letters the set removes duplicates close to half the size of the list.
+The set removes duplicates close to half the size of the list.
 
 
 ```
@@ -81,7 +74,7 @@ Len set:  8
 
 The script (parse_file.py) is used to create a file called (processedFile.txt).
 The function processFile() will open the selected file, read in content, split into list called
-contents. This list is iterated over and any word >2, <= max_length and is lowercase is written out to processedFile.txt. The exclusion of any capitalized words removes proper nouns.
+contents. This list is parsed and any word >2, <= max_length and is lowercase is written out to processedFile.txt. The exclusion of any capitalized words removes proper nouns.
 
 
 
@@ -93,11 +86,14 @@ Most of the processing time in this script is still parsing the file.
 This is the result from random input letters of (4 vowels, 5 consonants)
 
 ```
+Random vowels:  ['e', 'e', 'a', 'a']
+Random cons:  ['s', 'g', 'l', 't', 's']
+InputLetters:  teegaslsa
 Total List Contents:  193207
 Total Set Contents:  193206
-Parse file and create set_contents time:  0.378104 seconds
-Conundrum found time:  0.47798399999999996 seconds
-Before printing time:  0.519829 seconds
+Parse file and create set_contents time:  0.371224 seconds
+Found 9 @:  0.46818400000000004 seconds
+Before printing time:  0.476407 seconds
 
 ```
 
@@ -105,22 +101,22 @@ Before printing time:  0.519829 seconds
 
 ```
 ----------------------------
-InputLetters: snesgeloa
+InputLetters: teegaslsa
 ----------------------------
-Total possible words: 405
+Total possible words: 336
 ----------------------------
-Conundrums:  ['gasolenes']
+Possible 9: ['stealages']
 ----------------------------
-Possible 8: ['gasolene', 'enolases']
+Possible 8: ['stealage', 'gateless', 'elastase']
 ----------------------------
-Possible 7: ['slogans', 'angeles', 'ageless', 'eagless', 'ganoses', 'senegal', 'glossae', 'glassen', 'senegas', 'enolase']
+Possible 7: ['legates', 'stagese', 'stalags', 'telegas', 'eaglets', 'altesse', 'segetal', 'lastage', 'teasels', 'agelast', 'tea
+less', 'galeate', 'algates', 'eagless', 'galeass', 'etalage', 'ageless', 'atlases', 'gelates']
 ----------------------------
 
-Possible 6: ['slogan', 'longes', 'easels', 'geneal', 'engaol', 'anoles', 'gnoses', 'gossan', 'geason', 'salons', 'selago', 'osa
-ges', 'senega', 'gelose', 'angles', 'lenses', 'soleas', 'logans', 'sensal', 'nossel', 'gleans', 'eassel', 'leases', 'enseal', '
-essang', 'goalee', 'slangs', 'senage', 'eagles', 'losang', 'genoas', 'longee', 'leones', 'alenge', 'solans', 'loange', 'aneles'
-, 'anglos', 'agenes', 'gansel', 'olease', 'lessen', 'onless', 'angels', 'sagene', 'glossa', 'season', 'agones', 'segnos', 'less
-on', 'lanose', 'songle']
+Possible 6: ['teslas', 'asseal', 'stales', 'agates', 'leases', 'egesta', 'algate', 'stalag', 'geests', 'tassel', 'teagle', 'ges
+tes', 'sealet', 'telega', 'legate', 'steels', 'assate', 'gleets', 'easels', 'slates', 'lasset', 'aglets', 'leasts', 'teases', '
+galeas', 'steals', 'sagest', 'gestae', 'gelate', 'teasel', 'tessel', 'eatage', 'steles', 'eassel', 'eagles', 'saltee', 'egests'
+, 'stelae', 'stages', 'elates', 'eaglet', 'galeae', 'tassal', 'sleets', 'teasle']
 ----------------------------
 
 ```

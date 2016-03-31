@@ -52,7 +52,7 @@ def set_content_input(set_contents):
 # check set of perms against contents
 # i loop this on to place results in place
 def check(set_perms, set_contents_Checked):
-    conundrums = []
+    words9 = []
     words8 = []
     words7 = []
     words6 = []
@@ -65,8 +65,8 @@ def check(set_perms, set_contents_Checked):
         else:
             results.append(word.strip())
             if(len(word) == max_length):
-                conundrums.append(word)
-                print('Conundrum found time: ' ,  time.clock() - start_time, "seconds")
+                words9.append(word)
+                print('Found 9 @: ' ,  time.clock() - start_time, "seconds")
             elif(len(word) == 8):
                 words8.append(word)
             elif(len(word) == 7):
@@ -91,7 +91,7 @@ def check(set_perms, set_contents_Checked):
     print('----------------------------')
     print('Total possible words:', len(results))
     print('----------------------------')
-    print('Conundrums: ', conundrums)
+    print('Possible 9:', words9)
     print('----------------------------')
     print('Possible 8:', words8)
     print('----------------------------')
@@ -132,13 +132,13 @@ def letters_selection():
     # k = random.sample(c,4)
 
 
-    # print('Random vowels: ', l)
-    # print('Random cons: ', k)
+    print('Random vowels: ', l)
+    print('Random cons: ', k)
 
     s = l+k
     random.shuffle(s)
     y = "".join(s)
-    #print('All together now: ', y)
+    print('InputLetters: ', y)
     return y
 
 
@@ -146,8 +146,8 @@ def letters_selection():
 #inputLetters = input('Enter letters: ')
 
 
+
 inputLetters = letters_selection()
-#check(get_perms(), set_content_input(eliminate_nouns(get_contents(), get_nouns())))
 
 check(get_perms(), set_content_input(get_contents()))
 
