@@ -106,6 +106,34 @@ processFile(file_name)
 
 ### Main script
 
+To run the script
+
+```
+inputLetters = letters_selection()
+
+check(get_perms(), set_content_input(get_contents()))
+
+``
+
+To change letter selection requires comment/uncomment in letters_selection method
+In this example its 4 vowels, 5 consonants
+
+```
+
+  # l = random.sample(v,3)
+  # k = random.sample(c,6)
+
+
+  l = random.sample(v,4)
+  k = random.sample(c,5)
+
+
+  # l = random.sample(v,5)
+  # k = random.sample(c,4)
+
+
+```
+
 letters_selection() function to generate the random inputletters.
 
 get_perms() using itertools to generate a list of all permutations from inputLetters, returning a set to
@@ -123,7 +151,8 @@ check() ckecking set_perms against set_contents_Checked. I looped here to print 
 ### Efficiency
 
 Even with the files prepared having only word lengths, nouns removed etc the word list are quite large.
-Most of the processing time in this script is getting permutations.
+Biggest cost to the processing time in this script is getting permutations.
+
 InputLetters @: 0.0002859999999999946 seconds
 Get perms @: 0.315546 seconds
 Parse file @: 0.380085 seconds

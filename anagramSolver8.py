@@ -150,23 +150,24 @@ def letters_selection():
     return y
 
 
-# for testing i like to use combinations i know manually
+############################  run from here  ###############################
+
+# to enter letters manually
 #inputLetters = input('Enter letters: ')
 
-
-
+# to run random selection
 inputLetters = letters_selection()
+
 
 check(get_perms(), set_content_input(get_contents()))
 
 
-def timeTest():
+#def timeTest():
     #check(get_perms(), set_content_input(get_contents()))
     #get_perms()
     #get_contents()
     #letters_selection()
-    set_content_input(get_contents())
-
+    #set_content_input(get_contents())
 
 #timeTest()
 
