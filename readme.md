@@ -106,14 +106,25 @@ processFile(file_name)
 
 ### Main script
 
-To run the script
+To run the script random generated letters
 
 ```
 inputLetters = letters_selection()
 
 check(get_perms(), set_content_input(get_contents()))
 
-``
+```
+
+To run manually entering letters
+
+
+```
+inputLetters = input('Enter letters: ')
+
+check(get_perms(), set_content_input(get_contents()))
+
+
+```
 
 To change letter selection requires comment/uncomment in letters_selection method
 In this example its 4 vowels, 5 consonants
