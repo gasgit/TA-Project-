@@ -284,6 +284,20 @@ popian', 'ration', 'opaion', 'patrin', 'apport', 'intrap']
 ----------------------------
 
 ```
+### Included
+
+Included in this repository.
+Testing folder with earlier versions, test files and wordlists.
+file_parse.py - file preperation.
+anagramSolver8.py - run Solver.
+british-english-insane.txt - wordlist.
+uk.txt - wordlist.
+wordsFromGit.txt - wordlist.
+
+
+
+
+
 ### References
 
 https://docs.python.org/3/contents.html
