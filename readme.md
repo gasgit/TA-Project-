@@ -2,6 +2,8 @@
 
 ##Countdown Letters Game Solver
 
+###Github - https://github.com/gasgit/TA-Project-
+
 
 ###Countdown Letters Game
 Contestants are required to randomly select nine letters from two piles, vowels and consonants.
@@ -73,7 +75,7 @@ The function processFile() will open the selected file, read in content, split i
 contents. This list is parsed with any word >2, <= max_length and is lowercase written out to processedFile.txt. The exclusion of any capitalized words removes proper nouns.
 
 
-```
+```python
 max_length = 9
 
 def processFile(file_name):
@@ -151,9 +153,61 @@ letters_selection() function to generate the random inputLetters.
 get_perms() using itertools to generate a list of all permutations from inputLetters, returning a set to
 remove duplicates.
 
+```python
+
+def get_perms():
+    perms = []
+    for i in range(2, len(inputLetters) + 1):
+        for p in permutations(inputLetters, i):
+            perms.append( "".join(p))
+    print('Perms @', time.clock() - get_contents_time)
+    set_perms = set(perms)
+    print('Set perms @:', time.clock() - get_perms_time, "seconds")
+    return set_perms
+
+```
+
+
 get_contents() opens and read in file, parses to list and converts to set_contents.
 
+```python
+
+
+def get_contents():
+    with open('processedFile.txt', 'r') as f:
+        con = []
+        content = f.read()
+        contents = content.split()
+        for w in contents:
+            con.append(w)
+    set_contents = set(con)
+    print('Total List Contents:', len(contents))
+    print('Total Set Contents:', len(set_contents))
+    print('Parse file @:', time.clock() - get_contents_time, "seconds")
+    return set_contents
+
+
+```
+
+
 set_content_input() check InputLetters against each word in set_contents to create set_contents_Checked.
+
+```python
+
+def set_content_input(set_contents):
+    result = []
+    for w in set_contents:
+        for letter in w:
+            if letter not in inputLetters:
+                break
+        else:
+            result.append(w)
+    set_contents_Checked = set(result)
+    return set_contents_Checked
+    print('Check Input @:', time.clock() - check_input, "seconds")
+
+
+```
 
 check() ckecking set_perms against set_contents_Checked. I looped here to print results etc
 
@@ -196,7 +250,7 @@ Before print @: 0.532674 seconds
 
 ```
 
-## Results
+### Results
 
 ```
 InputLetters: aorippotn
@@ -216,3 +270,5 @@ popian', 'ration', 'opaion', 'patrin', 'apport', 'intrap']
 
 ```
 ### References
+
+https://docs.python.org/3/contents.html
