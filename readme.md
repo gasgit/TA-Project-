@@ -20,26 +20,28 @@ The script will use any wordlist
 
 
 1) word list was created from unix command:  cat /usr/share/dict/words > words.txt, 99171 words.
-   word list was created from unix command:                                           cat /usr/share/dict/british-english-insane > british-english-insane.txt, 650656 words.
 
-2) word list from  http://tug.ctan.org/tex-archive/syst...dt/dict/uk.zip i called uk.txt, 153222 words.
+2) word list was created from unix command:  cat /usr/share/dict/british-english-insane > british-english-insane.txt, 650656 words.
+
+3) word list from  http://tug.ctan.org/tex-archive/syst...dt/dict/uk.zip i called uk.txt, 153222 words.
 
 
-3) word list from  https://github.com/dwyl/english-words/blob/master/words.txt, renamed wordsFromGit.txt, 354985 words.
+4) word list from  https://github.com/dwyl/english-words/blob/master/words.txt, renamed wordsFromGit.txt, 354985 words.
 
 
 5) nouns list from http://www.desiquintans.com/nounlist
                    http://www.desiquintans.com/downloads/nounlist/nounlist.txt, renamed nouns.txt, 2327 words.
+                   Used in a previous version
 
 
 
 ### Python script
-My script is (anagramSolver7.py) in this repository and it works as follows.
+My script is (anagramSolver8.py) in this repository and it works as follows.
 The purpose of this script is to find if not the conundrum the longest words possible.
 
 The script will find all conundrums if any and all other words of decreasing length possible.
 
-I have used lists, sets, in/not in and for else  statements to complete this task.
+I have used lists, sets, in/not in and for else statements to complete this task.
 As its a python script i have opted to use one of the best built in tools **itertools**.
 Permutations is only a single part of itertools and what i use here.
 
@@ -77,7 +79,10 @@ Len set:  8
 
 ### Preprocessing
 
-I have not opted for preprocessing steps or techniques such as Pickle in this script.
+The script (parse_file.py) is used to create a file called (processedFile.txt).
+The function processFile() will open the selected file, read in content, split into list called
+contents. This list is iterated over and any word >2, <= max_length and is lowercase is written out to processedFile.txt. The exclusion of any capitalized words removes proper nouns. 
+
 
 
 ## Efficiency
