@@ -11,6 +11,9 @@ def processFile(file_name):
     print('File Processed')
     print('Run:  python3 anagramSolver8.py')
 
+
+#**************    choose one    **********************************
+
 #file_name = 'british-english-insane.txt'
 #file_name = 'words.txt'
 #file_name = 'uk.txt'

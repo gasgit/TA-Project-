@@ -7,6 +7,8 @@ import timeit
 max_length = 9
 
 
+get_perms_time = time.clock()
+
 # get all permutation for inputletters and return set
 def get_perms():
     perms = []
@@ -14,10 +16,11 @@ def get_perms():
         for p in permutations(inputLetters, i):
             perms.append( "".join(p))
     set_perms = set(perms)
+    print('Get perms @:', time.clock() - get_perms_time, "seconds")
     return set_perms
 
 
-start_time = time.clock()
+get_contents_time  = time.clock()
 
 # get contents of processed file
 def get_contents():
@@ -28,14 +31,14 @@ def get_contents():
         for w in contents:
             con.append(w)
     set_contents = set(con)
-    print('Total List Contents: ', len(contents))
-    print('Total Set Contents: ', len(set_contents))
-    print('Parse file and create set_contents time: ', time.clock() - start_time, "seconds")
+    print('Total List Contents:', len(contents))
+    print('Total Set Contents:', len(set_contents))
+    print('Parse file @:', time.clock() - get_contents_time, "seconds")
     return set_contents
-    return set_contents
 
 
 
+check_input = time.clock()
 
 # check set of unique words against inputletters and create new set set_contents_Checked
 def set_content_input(set_contents):
@@ -45,10 +48,13 @@ def set_content_input(set_contents):
             if letter not in inputLetters:
                 break
         else:
-            result.append(w.strip())
+            result.append(w)
     set_contents_Checked = set(result)
     return set_contents_Checked
+    print('Check Input @:', time.clock() - check_input, "seconds")
 
+
+checking_time = time.clock()
 # check set of perms against contents
 # i loop this on to place results in place
 def check(set_perms, set_contents_Checked):
@@ -66,7 +72,7 @@ def check(set_perms, set_contents_Checked):
             results.append(word.strip())
             if(len(word) == max_length):
                 words9.append(word)
-                print('Found 9 @: ' ,  time.clock() - start_time, "seconds")
+                print('Found 9 @:' ,  time.clock() - checking_time, "seconds")
             elif(len(word) == 8):
                 words8.append(word)
             elif(len(word) == 7):
@@ -82,8 +88,8 @@ def check(set_perms, set_contents_Checked):
             # else:
             #     print("Not Possible")
 
-    print('Before printing time: ', time.clock() - start_time, "seconds")
-    print_before = time.clock() - start_time
+    print('Before print @:', time.clock() - checking_time, "seconds")
+    print_before = time.clock() - checking_time
 
     print('Results: ', sorted(results, key=len))
     print('----------------------------')
@@ -101,11 +107,12 @@ def check(set_perms, set_contents_Checked):
     print('----------------------------')
     print('Possible 5:', words5)
     print('----------------------------')
-    print('Before printing time: ', print_before, "seconds")
-    print('That time: ', time.clock() - start_time, "seconds")
+    print('Before print @:', print_before, "seconds")
+    print('Total @:', time.clock() - checking_time, "seconds")
     return results
 
 
+inputLetters_time = time.clock()
 def letters_selection():
     vowels = 'aaaaaaaaaaaaaaaeeeeeeeeeeeeeeeeeeeeeiiiiiiiiiiiiiooooooooooooouuuuu'
     v = []
@@ -132,13 +139,14 @@ def letters_selection():
     # k = random.sample(c,4)
 
 
-    print('Random vowels: ', l)
-    print('Random cons: ', k)
+    print('Random vowels:', l)
+    print('Random cons:', k)
 
     s = l+k
     random.shuffle(s)
     y = "".join(s)
-    print('InputLetters: ', y)
+    print('InputLetters:', y)
+    print('InputLetters @:', time.clock() - inputLetters_time, 'seconds')
     return y
 
 
