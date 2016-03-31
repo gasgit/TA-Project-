@@ -149,7 +149,7 @@ def letters_selection():
 inputLetters = letters_selection()
 #check(get_perms(), set_content_input(eliminate_nouns(get_contents(), get_nouns())))
 
-#check(get_perms(), set_content_input(get_contents()))
+check(get_perms(), set_content_input(get_contents()))
 
 
 def timeTest():
@@ -160,6 +160,6 @@ def timeTest():
     set_content_input(get_contents())
 
 
-timeTest()
+#timeTest()
 
 #python3 -mtimeit -s'import anagramSolver8' 'anagramSolver8.timeTest()'

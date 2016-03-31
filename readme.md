@@ -8,7 +8,7 @@ Contestants are required to randomly select nine letters from two piles, vowels 
 There has to be at least 3 vowels and at least 4 consonants in the complete selection.
 Valid selections are (3 vowels and 6 cons, 4 vowels and 5 cons, 5 vowels and 4 cons)
 In the game the players have 30 seconds to find the longest word possible using the selected letters.
-Nouns are not permitted.
+Proper nouns are not permitted.
 Points are .....
 
 
@@ -81,29 +81,23 @@ Len set:  8
 
 The script (parse_file.py) is used to create a file called (processedFile.txt).
 The function processFile() will open the selected file, read in content, split into list called
-contents. This list is iterated over and any word >2, <= max_length and is lowercase is written out to processedFile.txt. The exclusion of any capitalized words removes proper nouns. 
+contents. This list is iterated over and any word >2, <= max_length and is lowercase is written out to processedFile.txt. The exclusion of any capitalized words removes proper nouns.
 
 
 
 ## Efficiency
 
-
+Even with the files prepared having only word lengths, nouns removed etc the word list are quite large.
+Most of the processing time in this script is still parsing the file.
 
 This is the result from random input letters of (4 vowels, 5 consonants)
 
 ```
-Random vowels:  ['o', 'e', 'e', 'a']
-Random cons:  ['c', 't', 'r', 'l', 's']
-All together now:  reocesalt
-Parse file and split to list:  0.409629 seconds
-Total List Contents:  267751
-Total Set Contents:  155302
-Parse file and create set_contents time:  0.465859 seconds
-Total List Contents Nouns:  2334
-Total Set Nouns:  2326
-Conundrum found time:  0.691507 seconds
-Conundrum found time:  0.798505 seconds
-Before printing time:  0.8314199999999999 seconds
+Total List Contents:  193207
+Total Set Contents:  193206
+Parse file and create set_contents time:  0.378104 seconds
+Conundrum found time:  0.47798399999999996 seconds
+Before printing time:  0.519829 seconds
 
 ```
 
@@ -111,21 +105,22 @@ Before printing time:  0.8314199999999999 seconds
 
 ```
 ----------------------------
-InputLetters: reocesalt
+InputLetters: snesgeloa
 ----------------------------
-Total possible words: 702
+Total possible words: 405
 ----------------------------
-Conundrums:  ['corelates', 'relocates']
+Conundrums:  ['gasolenes']
 ----------------------------
-Possible 8: ['oleaster', 'locaters', 'treacles', 'selector', 'corselet', 'relocate', 'corelate', 'scelerat', 'clearest', 'electors', 'creasot
-e', 'escarole', 'sectoral', 'electros']
+Possible 8: ['gasolene', 'enolases']
 ----------------------------
-Possible 7: ['elaters', 'treacle', 'relates', 'solacer', 'stealer', 'scatole', 'recoals', 'reclose', 'cartels', 'locates', 'carlots', 'ecarte
+Possible 7: ['slogans', 'angeles', 'ageless', 'eagless', 'ganoses', 'senegal', 'glossae', 'glassen', 'senegas', 'enolase']
+----------------------------
 
-s', 'escolar', 'celesta', 'rescale', 'tarcels', 'creoles', 'scrotal', 'soleret', 'colters', 'lactose', 'corslet', 'talcose', 'electro', 'orac
-les', 'reslate', 'cerates', 'locater', 'claroes', 'acetose', 'costrel', 'selecta', 'coatees', 'areoles', 'cereals', 'alecost', 'elector', 'co
-aters', 'tercels', 'coalers', 'ocreate', 'acerose', 'clarets', 'crestal', 'crotals', 'olestra', 'sclerae', 'scarlet', 'coaster', 'creates', '
-oleates', 'relaces', 'realest', 'alerces', 'recoats', 'oestral', 'secreta', 'lectors', 'roseate']
+Possible 6: ['slogan', 'longes', 'easels', 'geneal', 'engaol', 'anoles', 'gnoses', 'gossan', 'geason', 'salons', 'selago', 'osa
+ges', 'senega', 'gelose', 'angles', 'lenses', 'soleas', 'logans', 'sensal', 'nossel', 'gleans', 'eassel', 'leases', 'enseal', '
+essang', 'goalee', 'slangs', 'senage', 'eagles', 'losang', 'genoas', 'longee', 'leones', 'alenge', 'solans', 'loange', 'aneles'
+, 'anglos', 'agenes', 'gansel', 'olease', 'lessen', 'onless', 'angels', 'sagene', 'glossa', 'season', 'agones', 'segnos', 'less
+on', 'lanose', 'songle']
 ----------------------------
 
 ```
