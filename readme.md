@@ -145,10 +145,13 @@ In this example its 4 vowels, 5 consonants
 
 ```
 
+
+### Functions
+
 letters_selection() function to generate the random inputletters.
 
 get_perms() using itertools to generate a list of all permutations from inputLetters, returning a set to
-get rid of duplicates.
+remove duplicates.
 
 get_contents() opens and read in file, parses to list and converts to set_contents.
 
