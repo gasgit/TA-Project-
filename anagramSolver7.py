@@ -1,6 +1,8 @@
 import itertools, random, time
 from itertools import permutations
 
+import timeit
+#python3 -mtimit -s'import anagramSolver7' 'anagramSolver7.get_contents()'
 
 max_length = 9
 
@@ -8,7 +10,7 @@ max_length = 9
 # get all permutation in inputletters
 def get_perms():
     perms = []
-    for i in range(1, len(inputLetters) + 1):
+    for i in range(2, len(inputLetters) + 1):
         for p in permutations(inputLetters, i):
             perms.append( "".join(p))
     set_perms = set(perms)
@@ -17,10 +19,9 @@ def get_perms():
 
 start_time = time.clock()
 
-# parse file and create a set of unique words
+#parse file and create a set of unique words
 def get_contents():
-    with open('scrabble.txt', 'r') as f:
-    #with open('scrabbleLower.txt', 'r') as f:
+    with open('british-english-insane.txt', 'r') as f:
     #with open('words.txt', 'r') as f:
     #with open('uk.txt', 'r') as f:
     #with open('wordsFromGit.txt', 'r') as f:
@@ -28,7 +29,6 @@ def get_contents():
         content = f.read().lower()
         contents = content.split()
         print('Parse file and split to list: ', time.clock() - start_time, "seconds")
-
         for w in contents:
             if len(w) <= max_length:
                 con.append(w)
@@ -37,6 +37,9 @@ def get_contents():
     print('Total Set Contents: ', len(set_contents))
     print('Parse file and create set_contents time: ', time.clock() - start_time, "seconds")
     return set_contents
+
+
+
 
 
 # parse file of nouns
@@ -84,6 +87,7 @@ def check(set_perms, set_contents_C):
         for w in set_contents_C:
             if word not in set_contents_C:
                 break
+    #for word in intersection(set_perms, set_contents_C):
         else:
             results.append(word.strip())
             if(len(word) == max_length):
@@ -103,14 +107,12 @@ def check(set_perms, set_contents_C):
             #     words5.append(word)
             # elif(len(word) == 2):
             #     words5.append(word)
-            # elif(len(word) == 2):
-            #     words5.append(word)
             # elif(len(word) == 1):
             #     words5.append(word)
             # else:
             #     print("Not Possible")
 
-    print('Before printing time: ', time.clock() - start_time, "seconds")
+    #print('Before printing time: ', time.clock() - start_time, "seconds")
     print_before = time.clock() - start_time
 
     print('Results: ', sorted(results, key=len))
@@ -147,7 +149,7 @@ def letters_selection():
     for j in consts:
         c.append(j)
     random.shuffle(c)
-
+    #
     # l = random.sample(v,3)
     # k = random.sample(c,6)
 
@@ -176,6 +178,14 @@ def letters_selection():
 
 
 inputLetters = letters_selection()
-
-# calling costs so here we go in one
 check(get_perms(), set_content_input(eliminate_nouns(get_contents(), get_nouns())))
+
+#def timeTest():
+    #check(get_perms(), set_content_input(eliminate_nouns(get_contents(), get_nouns())))
+    #get_perms()
+    #get_contents()
+
+
+#timeTest()
+
+#python3 -mtimeit -s'import anagramSolver7' 'anagramSolver7.timeTest()'
