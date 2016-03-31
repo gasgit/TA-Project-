@@ -8,7 +8,7 @@
 ###Countdown Letters Game
 Contestants are required to randomly select nine letters from two piles, vowels and consonants.
 There has to be at least 3 vowels and at least 4 consonants in the complete selection.
-Valid selections are (3 vowels and 6 coconsonants, 4 vowels and 5 consonants, 5 vowels and 4 consonants)
+Valid selections are (3 vowels and 6 consonants, 4 vowels and 5 consonants, 5 vowels and 4 consonants)
 In the game the players have 30 seconds to find the longest word possible using the selected letters.
 Proper nouns are not permitted.
 
@@ -31,10 +31,9 @@ The script will use any wordlist
 
 
 ### Python script
-My script is (anagramSolver8.py) in this repository and it works as follows.
-The purpose of this script is to find a conundrum the longest words possible.
+My script is (anagramSolver8.py) in this repository. The purpose of this script is to find the longest words possible.
 
-The script will find all conundrums if any and all other words of decreasing length possible.
+The script will find all words of length 9 if any and all other words of decreasing length to length 3.
 
 I have used lists, sets, regular loops and for else statements to complete this task.
 As its a python script i have opted to use one of the best built in tools **itertools**.
