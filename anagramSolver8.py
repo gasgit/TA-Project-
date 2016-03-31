@@ -15,8 +15,9 @@ def get_perms():
     for i in range(2, len(inputLetters) + 1):
         for p in permutations(inputLetters, i):
             perms.append( "".join(p))
+    print('Just Perms @', time.clock() - get_contents_time)
     set_perms = set(perms)
-    print('Get perms @:', time.clock() - get_perms_time, "seconds")
+    print('Set perms @:', time.clock() - get_perms_time, "seconds")
     return set_perms
 
 

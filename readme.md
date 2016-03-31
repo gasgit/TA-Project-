@@ -167,26 +167,30 @@ check() ckecking set_perms against set_contents_Checked. I looped here to print 
 Even with the files prepared having only word lengths, nouns removed etc the word list are quite large.
 Biggest cost to the processing time in this script is getting permutations.
 
-InputLetters @: 0.0002859999999999946 seconds.
-Get perms @: 0.315546 seconds.
-Parse file @: 0.380085 seconds.
-Before print @: 0.489270 seconds.
-Total @: 0.489591 seconds.
+InputLetters @: 0.0002909999999999996 seconds.
+Just Perms @ 0.239487.
+Set perms @: 0.33045599999999997 seconds.
+Parse file @: 0.39643300000000004 seconds.
+Before print @: 0.532674 seconds.
+Total @: 0.532954 seconds. 
+
+
 
 This is the result from random input letters of (4 vowels, 5 consonants) using wordsFromGit.txt.
 
 ```
-Random vowels: ['e', 'i', 'a', 'e']
-Random cons: ['n', 't', 't', 'n', 'r']
-InputLetters: tterianne
-InputLetters @: 0.0002859999999999946 seconds
-Get perms @: 0.315546 seconds
+Random vowels: ['o', 'i', 'o', 'a']
+Random cons: ['r', 't', 'p', 'p', 'n']
+InputLetters: aorippotn
+InputLetters @: 0.0002909999999999996 seconds
+Just Perms @ 0.239487
+Set perms @: 0.33045599999999997 seconds
 Total List Contents: 193207
 Total Set Contents: 193206
-Parse file @: 0.380085 seconds
-Found 9 @: 0.445351 seconds
-Found 9 @: 0.451214 seconds
-Before print @: 0.48927000000000004 seconds
+Parse file @: 0.39643300000000004 seconds
+Found 9 @: 0.466143 seconds
+Found 9 @: 0.503356 seconds
+Before print @: 0.532674 seconds
 
 
 ```
@@ -194,19 +198,19 @@ Before print @: 0.48927000000000004 seconds
 ## Results
 
 ```
+InputLetters: aorippotn
 ----------------------------
-InputLetters: tterianne
+Total possible words: 302
 ----------------------------
-Total possible words: 340
+Possible 9: ['apportion', 'appointor']
 ----------------------------
-Possible 9: ['entertain', 'terentian']
-
+Possible 8: ['protopin', 'tropaion', 'opinator']
 ----------------------------
-Possible 8: ['antirent', 'tenanter', 'retenant', 'intereat', 'renitent', 'tetanine', 'intranet', 'internet', 'internat', 'trenti
-ne', 'tinetare']
+Possible 7: ['pronota', 'oration', 'patroon', 'pronaoi', 'ontario', 'atropin', 'appoint', 'portion', 'tappoon']
 ----------------------------
-Possible 7: ['triaene', 'entrant', 'antient', 'trainee', 'tertian', 'arenite', 'tentier', 'interne', 'retinae', 'traneen', 'iter
-ate', 'intreat', 'iterant', 'nettier', 'nattier', 'atrenne', 'taenite', 'anterin', 'intrate', 'ternate', 'tarente', 'trannie', '
-aniente', 'ratteen', 'nitrate', 'ariette', 'entrain', 'tartine', 'entreat', 'intrant', 'tetrane', 'enteria']
+Possible 6: ['parton', 'rippon', 'papion', 'option', 'tropia', 'portia', 'ratoon', 'ropani', 'proton', 'porion', 'aroint', 'tro
+pin', 'pronto', 'piroot', 'portio', 'norito', 'potion', 'propio', 'troppo', 'inport', 'patron', 'tarpon', 'porina', 'pitpan', '
+popian', 'ration', 'opaion', 'patrin', 'apport', 'intrap']
+----------------------------
 
 ```
