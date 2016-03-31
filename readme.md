@@ -164,11 +164,11 @@ check() ckecking set_perms against set_contents_Checked. I looped here to print 
 Even with the files prepared having only word lengths, nouns removed etc the word list are quite large.
 Biggest cost to the processing time in this script is getting permutations.
 
-InputLetters @: 0.0002859999999999946 seconds
-Get perms @: 0.315546 seconds
-Parse file @: 0.380085 seconds
-Before print @: 0.489270 seconds
-Total @: 0.489591 seconds
+InputLetters @: 0.0002859999999999946 seconds.
+Get perms @: 0.315546 seconds.
+Parse file @: 0.380085 seconds.
+Before print @: 0.489270 seconds.
+Total @: 0.489591 seconds.
 
 This is the result from random input letters of (4 vowels, 5 consonants) using wordsFromGit.txt.
 
