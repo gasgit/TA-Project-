@@ -64,6 +64,8 @@ def check(set_perms, set_contents_Checked):
     words7 = []
     words6 = []
     words5 = []
+    words4 = []
+    words3 = []
     results = []
     for word in set_perms:
         for w in set_contents_Checked:
@@ -86,8 +88,8 @@ def check(set_perms, set_contents_Checked):
             #     words4.append(word)
             # elif(len(word) == 3):
             #     words3.append(word)
-            # else:
-            #     print("Not Possible")
+            else:
+                pass
 
     print('Before print @:', time.clock() - checking_time, "seconds")
     print_before = time.clock() - checking_time

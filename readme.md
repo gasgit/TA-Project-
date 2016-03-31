@@ -102,11 +102,18 @@ processFile(file_name)
 
 
 ```
+To run the file_parse script
+
+```bash
+python3 file_parse.py
+
+```
+
 
 
 ### Main script
 
-To run the script random generated letters
+To run the script random generated letters required method call
 
 ```
 inputLetters = letters_selection()
@@ -114,6 +121,7 @@ inputLetters = letters_selection()
 check(get_perms(), set_content_input(get_contents()))
 
 ```
+
 
 To run manually entering letters
 
@@ -123,6 +131,13 @@ inputLetters = input('Enter letters: ')
 
 check(get_perms(), set_content_input(get_contents()))
 
+
+```
+
+To run the script
+
+```bash
+python3 anagramSolver8.py
 
 ```
 
